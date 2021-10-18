@@ -4,6 +4,8 @@ import (
 	"fmt"
 
 	"github.com/jinzhu/gorm"
+	// 下划线导入：只是引用该包，仅仅是为了调用init()函数
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/xielizyh/goprj-blog_service/global"
 	"github.com/xielizyh/goprj-blog_service/pkg/setting"
 )
@@ -20,7 +22,7 @@ type Model struct {
 
 func NewDBEngine(databaseSetting *setting.DatabaseSettingS) (*gorm.DB, error) {
 	// 打开数据库：root:123456@tcp(127.0.0.1)/blog_service?charset=utf8&parseTime=true&loc=local
-	db, err := gorm.Open(databaseSetting.DBType, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=%s&parseTime=%t&loc=local",
+	db, err := gorm.Open(databaseSetting.DBType, fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=%s&parseTime=%t&loc=Local",
 		databaseSetting.UserName,
 		databaseSetting.Password,
 		databaseSetting.Host,

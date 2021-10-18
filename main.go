@@ -9,7 +9,9 @@ import (
 	"github.com/xielizyh/goprj-blog_service/global"
 	"github.com/xielizyh/goprj-blog_service/internal/model"
 	"github.com/xielizyh/goprj-blog_service/internal/routers"
+	"github.com/xielizyh/goprj-blog_service/pkg/logger"
 	"github.com/xielizyh/goprj-blog_service/pkg/setting"
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 func init() {
@@ -18,6 +20,9 @@ func init() {
 	}
 	if err := setupDBEngine(); err != nil {
 		log.Fatalf("init.setupDBEngine err: %v", err)
+	}
+	if err := setupLogger(); err != nil {
+		log.Fatalf("init.setupLogger err: %v", err)
 	}
 }
 
@@ -61,6 +66,7 @@ func setupSetting() error {
 	global.ServerSetting.ReadTimeout *= time.Second
 	global.ServerSetting.WriteTimeout *= time.Second
 
+	// 打印设置
 	fmt.Println("settings:", global.ServerSetting, global.AppSetting, global.DatabaseSetting)
 	return nil
 }
@@ -73,5 +79,23 @@ func setupDBEngine() error {
 		return err
 	}
 
+	return nil
+}
+
+func setupLogger() error {
+	//  使用lumberjack 作为日志库的 io.Writer
+	global.Logger = logger.NewLogger(&lumberjack.Logger{
+		// 日志文件名
+		Filename: global.AppSetting.LogSavePath + "/" + global.AppSetting.LogFileName + global.AppSetting.LogFileExt,
+		// 日志最大占用空间600MB
+		MaxSize: 600,
+		// 日志文件最大生存周期为 10 天
+		MaxAge: 10,
+		// 日志文件名的时间格式为本地时间
+		LocalTime: true,
+	}, "", log.LstdFlags).WithCaller(2)
+
+	// 测试日志存储
+	global.Logger.Infof("%s: blog-service/%s", "xieli", "test logger")
 	return nil
 }

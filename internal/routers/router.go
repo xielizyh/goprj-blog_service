@@ -2,6 +2,9 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
+	ginSwagger "github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+	_ "github.com/xielizyh/goprj-blog_service/docs"
 	v1 "github.com/xielizyh/goprj-blog_service/internal/routers/api/v1"
 )
 
@@ -13,6 +16,8 @@ func NewRouter() *gin.Engine {
 	r.Use(gin.Logger())
 	// 使用Recovery中间件
 	r.Use(gin.Recovery())
+	// 注册针对swagger的路由
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	article := v1.NewArticle()
 	tag := v1.NewTag()

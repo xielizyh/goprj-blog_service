@@ -11,6 +11,15 @@ type Response struct {
 	Ctx *gin.Context
 }
 
+type Pager struct {
+	// 页码
+	Page int `json:"page"`
+	// 每页数量
+	PageSize int `json:"page_size"`
+	// 总行数
+	TotalRows int `json:"total_rows"`
+}
+
 // NewResponse 新建响应
 func NewResponse(ctx *gin.Context) *Response {
 	return &Response{
@@ -24,6 +33,17 @@ func (r *Response) ToResponse(data interface{}) {
 		data = gin.H{}
 	}
 	r.Ctx.JSON(http.StatusOK, data)
+}
+
+func (r *Response) ToResponseList(list interface{}, totalRows int) {
+	r.Ctx.JSON(http.StatusOK, gin.H{
+		"list": list,
+		"pager": Pager{
+			Page:      GetPage(r.Ctx),
+			PageSize:  GetPageSize(r.Ctx),
+			TotalRows: totalRows,
+		},
+	})
 }
 
 // ToErrorResponse 错误响应

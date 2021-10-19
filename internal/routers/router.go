@@ -5,6 +5,7 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "github.com/xielizyh/goprj-blog_service/docs"
+	"github.com/xielizyh/goprj-blog_service/internal/middleware"
 	v1 "github.com/xielizyh/goprj-blog_service/internal/routers/api/v1"
 )
 
@@ -16,6 +17,8 @@ func NewRouter() *gin.Engine {
 	r.Use(gin.Logger())
 	// 使用Recovery中间件
 	r.Use(gin.Recovery())
+	// 使用Translations注册
+	r.Use(middleware.Translations())
 	// 注册针对swagger的路由
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 

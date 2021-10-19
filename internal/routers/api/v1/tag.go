@@ -1,6 +1,12 @@
 package v1
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/xielizyh/goprj-blog_service/global"
+	"github.com/xielizyh/goprj-blog_service/internal/service"
+	"github.com/xielizyh/goprj-blog_service/pkg/app"
+	"github.com/xielizyh/goprj-blog_service/pkg/errcode"
+)
 
 type Tag struct{}
 
@@ -21,7 +27,21 @@ func (t Tag) Get(c *gin.Context) {}
 // @Failure 400 {object} errcode.Error "请求错误"
 // @Failure 500 {object} errcode.Error "内部错误"
 // @Router /api/v1/tags [get]
-func (t Tag) List(c *gin.Context) {}
+func (t Tag) List(c *gin.Context) {
+	// 入参校验和参数绑定
+	param := service.TagListRequest{}
+	// 创建响应
+	response := app.NewResponse(c)
+	// 校验
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("app.BindAndValid error: %v", errs)
+		// 回应错误
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+	}
+	// 正常回应
+	response.ToResponse(gin.H{})
+}
 
 // @Summary 新增标签
 // @Produce  json

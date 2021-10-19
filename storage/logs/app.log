@@ -1,1 +1,31 @@
 2021/10/18 14:52:57 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634539977438840400}
+2021/10/18 17:39:19 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634549959232980900}
+2021/10/19 08:50:30 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634604630746084700}
+2021/10/19 10:10:01 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634609401307634500}
+2021/10/19 10:13:43 {"callers":["f:/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634609623710513800}
+2021/10/19 10:14:54 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634609694532918300}
+2021/10/19 10:15:30 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634609730843971200}
+2021/10/19 10:16:54 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634609814666650600}
+2021/10/19 10:19:32 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634609972710642200}
+2021/10/19 10:21:23 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634610083632068100}
+2021/10/19 10:21:50 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634610110173551400}
+2021/10/19 10:31:21 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634610681466650900}
+2021/10/19 10:31:36 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634610696156960300}
+2021/10/19 10:42:44 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634611364478795800}
+2021/10/19 10:52:38 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634611958317985900}
+2021/10/19 10:52:43 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634611963168543000}
+2021/10/19 10:55:20 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634612120714993700}
+2021/10/19 10:55:56 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634612156059487700}
+2021/10/19 10:56:01 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634612161431822600}
+2021/10/19 10:57:38 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634612258923499600}
+2021/10/19 10:57:45 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: Key: 'TagListRequest.State' Error:Field validation for 'State' failed on the 'oneof' tag","time":1634612265959447800}
+2021/10/19 11:00:13 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634612413999793400}
+2021/10/19 11:00:52 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634612452093652000}
+2021/10/19 11:01:07 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634612467591704200}
+2021/10/19 14:07:05 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634623625820543700}
+2021/10/19 14:07:14 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634623634737228000}
+2021/10/19 14:09:51 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634623791847927900}
+2021/10/19 14:09:58 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634623798952340500}
+2021/10/19 14:11:01 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634623861491241000}
+2021/10/19 14:13:04 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634623984481968100}
+2021/10/19 14:13:12 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State必须是[0 1]中的一个","time":1634623992164122500}

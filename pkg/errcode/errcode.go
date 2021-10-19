@@ -43,6 +43,11 @@ func (e *Error) Msgf(args []interface{}) string {
 	return fmt.Sprintf(e.msg, args...)
 }
 
+// Details 返回详细信息
+func (e *Error) Details() []string {
+	return e.details
+}
+
 // WithDetails 创建具备详细信息的错误码
 func (e *Error) WithDetails(details ...string) *Error {
 	newError := *e

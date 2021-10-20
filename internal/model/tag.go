@@ -56,8 +56,14 @@ func (t Tag) Create(db *gorm.DB) error {
 }
 
 // Update 更新标签记录
-func (t Tag) Update(db *gorm.DB) error {
-	return db.Model(&Tag{}).Where("id = ? AND is_del = ?", t.ID, 0).Update(t).Error
+func (t Tag) Update(db *gorm.DB, values interface{}) error {
+	// 使用字典形式可以进行更新零值
+	if err := db.Model(t).Where("id = ? AND is_del = ?", t.ID, 0).Updates(values).Error; err != nil {
+		return err
+	}
+	return nil
+	// 在 GORM 中使用 struct 类型传入进行更新时，GORM 是不会对值为零值的字段进行变更
+	// return db.Model(&Tag{}).Where("id = ? AND is_del = ?", t.ID, 0).Update(t).Error
 }
 
 // Delete 删除标签

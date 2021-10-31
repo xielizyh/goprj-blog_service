@@ -49,3 +49,9 @@
 2021/10/20 09:39:21 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"error","message":"app.BindAndValid error: State为必填字段","time":1634693961790174800}
 2021/10/20 09:43:58 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 24 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634694238980831500}
 2021/10/20 10:38:20 {"callers":["/mnt/f/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1634697500238961200}
+2021/10/31 11:13:18 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1635649998052808200}
+2021/10/31 11:21:17 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: Title为必填字段,Desc为必填字段,Content为必填字段,CoverImageUrl为必填字段,CreatedBy为必填字段","time":1635650477912854400}
+2021/10/31 11:22:54 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: CoverImageUrl为必填字段,CreatedBy为必填字段,Title为必填字段,Desc为必填字段,Content为必填字段","time":1635650574977262100}
+2021/10/31 11:24:26 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: CoverImageUrl必须是一个有效的URL","time":1635650666472091000}
+2021/10/31 11:25:26 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: CoverImageUrl必须是一个有效的URL","time":1635650726170899500}
+2021/10/31 11:25:32 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: CoverImageUrl必须是一个有效的URL","time":1635650732712815700}

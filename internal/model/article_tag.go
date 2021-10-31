@@ -1,5 +1,7 @@
 package model
 
+import "github.com/jinzhu/gorm"
+
 type ArticleTag struct {
 	*Model
 	TagID     uint32 `json:"tag_id"`
@@ -8,4 +10,8 @@ type ArticleTag struct {
 
 func (a ArticleTag) TableName() string {
 	return "blog_article_tag"
+}
+
+func (at ArticleTag) Create(db *gorm.DB) error {
+	return db.Create(&at).Error
 }

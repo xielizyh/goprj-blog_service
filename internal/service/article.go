@@ -34,3 +34,13 @@ type UpdateArticleRequest struct {
 type DeleteArticleRequest struct {
 	ID uint32 `form:"id" binding:"required,gte=1"`
 }
+
+func (svc *Service) CreateArticle(param *CreateArticleRequest) error {
+	return svc.dao.CreateArticle(
+		param.Title,
+		param.Desc,
+		param.Content,
+		param.CoverImageUrl,
+		param.CreatedBy,
+	)
+}

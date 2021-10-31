@@ -1,5 +1,7 @@
 package model
 
+import "github.com/jinzhu/gorm"
+
 type Article struct {
 	*Model
 	Title         string `json:"title"`
@@ -11,4 +13,8 @@ type Article struct {
 
 func (a Article) TableName() string {
 	return "blog_article"
+}
+
+func (a Article) Create(db *gorm.DB) error {
+	return db.Create(&a).Error
 }

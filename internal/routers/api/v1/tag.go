@@ -60,14 +60,12 @@ func (t Tag) List(c *gin.Context) {
 	}
 
 	response.ToResponseList(tags, totalRows)
-	return
 }
 
 // @Summary 新增标签
 // @Produce  json
 // @Param name body string true "标签名称" minlength(3) maxlength(100)
 // @Param state body int false "状态" Enums(0, 1) default(1)
-// @Param created_by body string true "创建者" minlength(3) maxlength(100)
 // @Success 200 {object} model.Tag "成功"
 // @Failure 400 {object} errcode.Error "请求错误"
 // @Failure 500 {object} errcode.Error "内部错误"
@@ -90,12 +88,11 @@ func (t Tag) Create(c *gin.Context) {
 	err := svc.CreateTag(&param)
 	if err != nil {
 		global.Logger.Errorf("svc.CreateTag error: %v", err)
-		response.ToErrorResponse(errcode.ErrorCountTagFail)
+		response.ToErrorResponse(errcode.ErrorCreateTagFail)
 		return
 	}
 
 	response.ToResponse(gin.H{})
-	return
 }
 
 // @Summary 更新标签
@@ -131,7 +128,6 @@ func (t Tag) Update(c *gin.Context) {
 	}
 
 	response.ToResponse(gin.H{})
-	return
 }
 
 // @Summary 删除标签
@@ -164,5 +160,4 @@ func (t Tag) Delete(c *gin.Context) {
 	}
 
 	response.ToResponse(gin.H{})
-	return
 }

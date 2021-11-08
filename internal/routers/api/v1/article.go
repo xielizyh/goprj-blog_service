@@ -2,21 +2,70 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/go-programming-tour-book/blog-service/pkg/convert"
 	"github.com/xielizyh/goprj-blog_service/global"
+	"github.com/xielizyh/goprj-blog_service/internal/model"
 	"github.com/xielizyh/goprj-blog_service/internal/service"
 	"github.com/xielizyh/goprj-blog_service/pkg/app"
 	"github.com/xielizyh/goprj-blog_service/pkg/errcode"
 )
 
-type Article struct{}
+type Article struct {
+	ID            uint32     `json:"id"`
+	Title         string     `json:"title"`
+	Desc          string     `json:"desc"`
+	Content       string     `json:"content"`
+	CoverImageUrl string     `json:"cover_image_url"`
+	State         uint8      `json:"state"`
+	Tag           *model.Tag `json:"tag"`
+}
 
 // NewArticle 新建文章
 func NewArticle() Article {
 	return Article{}
 }
 
-func (a Article) Get(c *gin.Context)  {}
-func (a Article) List(c *gin.Context) {}
+func (a Article) Get(c *gin.Context) {
+	param := service.ArticleRequest{
+		ID: convert.StrTo(c.Param("id")).MustUInt32(),
+	}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("app.BindAndValid error: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	svc := service.New(c.Request.Context())
+	article, err := svc.GetArticle(&param)
+	if err != nil {
+		global.Logger.Errorf("app.GetArticle error: %v", err)
+		response.ToErrorResponse(errcode.ErrorGetArticleFail)
+		return
+	}
+
+	response.ToResponse(article)
+}
+func (a Article) List(c *gin.Context) {
+	param := service.ArticleListRequest{}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("app.BindAndValid error: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	svc := service.New(c.Request.Context())
+	pager := app.Pager{Page: app.GetPage(c), PageSize: app.GetPageSize(c)}
+	articles, totalRows, err := svc.GetArticleList(&param, &pager)
+	if err != nil {
+		global.Logger.Errorf("app.GetArticleList error: %v", err)
+		response.ToErrorResponse(errcode.ErrorGetArticlesFail)
+		return
+	}
+
+	response.ToResponseList(articles, totalRows)
+}
 
 // @Summary 新增文章
 // @Produce  json
@@ -47,19 +96,48 @@ func (a Article) Create(c *gin.Context) {
 		return
 	}
 
-	// 更新文章标签
-	tagID := param.TagID
-	// TODO 查询数据库文章ID
-	var articleID uint32 = 1
-	at := NewArticleTag()
-	err = at.Create(tagID, articleID)
+	response.ToResponse(gin.H{})
+}
+
+func (a Article) Update(c *gin.Context) {
+	param := service.UpdateArticleRequest{
+		ID: convert.StrTo(c.Param("id")).MustUInt32(),
+	}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("app.BindAndValid error: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	svc := service.New(c.Request.Context())
+	err := svc.UpdateArticle(&param)
 	if err != nil {
-		response.ToErrorResponse(errcode.ErrorCreateArticleTagFail)
+		global.Logger.Errorf("app.UpdateArticle error: %v", err)
+		response.ToErrorResponse(errcode.ErrorUpdateArticleFail)
 		return
 	}
 
 	response.ToResponse(gin.H{})
 }
+func (a Article) Delete(c *gin.Context) {
+	param := service.DeleteArticleRequest{
+		ID: convert.StrTo(c.Param("id")).MustUInt32(),
+	}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("app.BindAndValid error: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+	svc := service.New(c.Request.Context())
+	err := svc.DeleteArticle(&param)
+	if err != nil {
+		global.Logger.Errorf("app.DeleteArticle error: %v", err)
+		response.ToErrorResponse(errcode.ErrorDeleteArticleFail)
+		return
+	}
 
-func (a Article) Update(c *gin.Context) {}
-func (a Article) Delete(c *gin.Context) {}
+	response.ToResponse(gin.H{})
+}

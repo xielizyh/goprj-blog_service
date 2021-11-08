@@ -37,3 +37,8 @@ func (d *Dao) UpdateArticleTag(articleID, tagID uint32, modifiedBy string) error
 	}
 	return articleTag.UpdateOne(d.engine, values)
 }
+
+func (d *Dao) DeleteArticleTag(articleID uint32) error {
+	articleTag := model.ArticleTag{ArticleID: articleID}
+	return articleTag.DeleteOne(d.engine)
+}

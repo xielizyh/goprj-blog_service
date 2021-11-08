@@ -1,6 +1,8 @@
 package model
 
-import "github.com/jinzhu/gorm"
+import (
+	"github.com/jinzhu/gorm"
+)
 
 type Article struct {
 	*Model
@@ -23,7 +25,7 @@ func (a Article) Create(db *gorm.DB) (*Article, error) {
 }
 
 func (a Article) Update(db *gorm.DB, values interface{}) error {
-	if err := db.Model(&a).Updates(&values).Where("id = ? AND is_del = ?", a.ID, 0).Error; err != nil {
+	if err := db.Model(&a).Updates(values).Where("id = ? AND is_del = ?", a.ID, 0).Error; err != nil {
 		return err
 	}
 	return nil
@@ -57,8 +59,8 @@ type ArticleRow struct {
 }
 
 func (a Article) ListByTagID(db *gorm.DB, tagID uint32, pageOffset, pageSize int) ([]*ArticleRow, error) {
-	fields := []string{"ar.id AS article_id", "ar.title AS article_title", "ar.desc AS article_desc", "ar.cover_image_url", "as.content"}
-	fields = append(fields, []string{"t.id AS tag_id", "t.t_name AS tag_name"}...)
+	fields := []string{"ar.id AS article_id", "ar.title AS article_title", "ar.desc AS article_desc", "ar.cover_image_url", "ar.content"}
+	fields = append(fields, []string{"t.id AS tag_id", "t.name AS tag_name"}...)
 	if pageOffset >= 0 && pageSize > 0 {
 		db = db.Offset(pageOffset).Limit(pageSize)
 	}

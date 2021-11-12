@@ -82,3 +82,6 @@
 2021/11/08 16:13:15 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636359195601143600}
 2021/11/08 16:13:24 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"error","message":"app.GetArticleList error: Error 1054: Unknown column 't.t_name' in 'field list'","time":1636359204840407600}
 2021/11/08 16:13:25 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"error","message":"app.GetArticleList error: Error 1054: Unknown column 't.t_name' in 'field list'","time":1636359205676176400}
+2021/11/12 10:02:47 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636682567510980100}
+2021/11/12 14:31:14 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636698674499881900}
+2021/11/12 14:38:13 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636699093430191600}

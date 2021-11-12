@@ -1,11 +1,15 @@
 package routers
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "github.com/xielizyh/goprj-blog_service/docs"
+	"github.com/xielizyh/goprj-blog_service/global"
 	"github.com/xielizyh/goprj-blog_service/internal/middleware"
+	api "github.com/xielizyh/goprj-blog_service/internal/routers/api"
 	v1 "github.com/xielizyh/goprj-blog_service/internal/routers/api/v1"
 )
 
@@ -24,6 +28,10 @@ func NewRouter() *gin.Engine {
 
 	article := v1.NewArticle()
 	tag := v1.NewTag()
+	upload := api.NewUpload()
+	r.POST("/upload/file", upload.UploadFile)
+	// 新增 StaticFS 路由，提供静态资源的访问
+	r.StaticFS("/static/", http.Dir(global.AppSetting.UploadSavePath))
 	// 创建api/v1路由组
 	apiv1 := r.Group("/api/v1")
 	// 注册Handler到对应的路由规则

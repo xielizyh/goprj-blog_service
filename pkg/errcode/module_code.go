@@ -13,9 +13,5 @@ var (
 	ErrorUpdateArticleFail = NewError(20020004, "更新文章失败")
 	ErrorDeleteArticleFail = NewError(20020005, "删除文章失败")
 
-	ErrorGetArticleTagFail    = NewError(20030001, "获取文章标签列表失败")
-	ErrorCreateArticleTagFail = NewError(20030002, "创建文章标签失败")
-	ErrorUpdateArticleTagFail = NewError(20030003, "更新文章标签失败")
-	ErrorDeleteArticleTagFail = NewError(20030004, "删除文章标签失败")
-	ErrorCountArticleTagFail  = NewError(20030005, "统计文章标签失败")
+	ErrorUploadFileFail = NewError(20030001, "上传文件失败")
 )

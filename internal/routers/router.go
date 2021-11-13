@@ -29,11 +29,16 @@ func NewRouter() *gin.Engine {
 	article := v1.NewArticle()
 	tag := v1.NewTag()
 	upload := api.NewUpload()
+	// 新增上传文件路由
 	r.POST("/upload/file", upload.UploadFile)
 	// 新增 StaticFS 路由，提供静态资源的访问
 	r.StaticFS("/static/", http.Dir(global.AppSetting.UploadSavePath))
+	// 新增认证auth路由
+	r.POST("/auth", api.GetAuth)
 	// 创建api/v1路由组
 	apiv1 := r.Group("/api/v1")
+	// 对apiv1路由分组使用JWT中间件
+	apiv1.Use(middleware.JWT())
 	// 注册Handler到对应的路由规则
 	{
 		// 增

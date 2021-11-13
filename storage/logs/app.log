@@ -85,3 +85,42 @@
 2021/11/12 10:02:47 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636682567510980100}
 2021/11/12 14:31:14 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636698674499881900}
 2021/11/12 14:38:13 {"callers":["F:/Self/go_programming_tour/blog-service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636699093430191600}
+2021/11/13 16:31:44 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636792304784421300}
+2021/11/13 16:34:23 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: AppKey为必填字段,AppSecret为必填字段","time":1636792463621916800}
+2021/11/13 16:34:48 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: AppKey为必填字段,AppSecret为必填字段","time":1636792488341861400}
+2021/11/13 16:40:21 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.BindAndValid error: AppKey为必填字段,AppSecret为必填字段","time":1636792821683195500}
+2021/11/13 16:40:58 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636792858117731800}
+2021/11/13 16:42:05 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636792925732311700}
+2021/11/13 16:53:10 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636793590046087800}
+2021/11/13 16:53:15 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793595422538400}
+2021/11/13 16:53:36 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793616138916600}
+2021/11/13 16:56:35 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636793795490841100}
+2021/11/13 16:56:41 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793801050925000}
+2021/11/13 16:56:42 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793802025513600}
+2021/11/13 16:56:42 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793802661725500}
+2021/11/13 16:58:09 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636793889139861200}
+2021/11/13 16:58:14 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793894072029100}
+2021/11/13 16:58:14 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793894914050900}
+2021/11/13 16:58:15 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793895760245900}
+2021/11/13 16:58:43 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636793923149106300}
+2021/11/13 16:58:52 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793932179234200}
+2021/11/13 16:58:53 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636793933044357600}
+2021/11/13 16:59:57 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636793997052468700}
+2021/11/13 17:00:02 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794002343312800}
+2021/11/13 17:00:03 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794003701621900}
+2021/11/13 17:01:43 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794103605502600}
+2021/11/13 17:01:49 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794109099184800}
+2021/11/13 17:01:49 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794109849127400}
+2021/11/13 17:01:50 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794110696652900}
+2021/11/13 17:02:52 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794172720568700}
+2021/11/13 17:02:59 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794179154261500}
+2021/11/13 17:04:38 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794278267149400}
+2021/11/13 17:04:44 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794284456484800}
+2021/11/13 17:06:32 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794392479228300}
+2021/11/13 17:06:37 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794397595052500}
+2021/11/13 17:07:24 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794444021179400}
+2021/11/13 17:07:30 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794450288344800}
+2021/11/13 17:09:05 {"callers":["f:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794545839783700}
+2021/11/13 17:09:11 {"callers":["f:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"error","message":"app.GenerateToken error: key is of invalid type","time":1636794551209991200}
+2021/11/13 17:11:38 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636794698983284800}
+2021/11/13 17:23:07 {"callers":["F:/10---Golang/project/goprj-blog_service/main.go: 28 main.init.0"],"level":"info","message":"xieli: blog-service/test logger","time":1636795387354379700}

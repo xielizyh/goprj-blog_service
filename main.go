@@ -91,12 +91,19 @@ func setupSetting() error {
 	if err != nil {
 		return err
 	}
+	// JWT配置
+	err = setting.ReadSection("JWT", &global.JWTSetting)
+	if err != nil {
+		return err
+	}
 
 	global.ServerSetting.ReadTimeout *= time.Second
 	global.ServerSetting.WriteTimeout *= time.Second
 
+	global.JWTSetting.Expire *= time.Second
+
 	// 打印设置
-	fmt.Println("settings:", global.ServerSetting, global.AppSetting, global.DatabaseSetting)
+	fmt.Println("settings:", global.ServerSetting, global.AppSetting, global.DatabaseSetting, global.JWTSetting)
 	return nil
 }
 
